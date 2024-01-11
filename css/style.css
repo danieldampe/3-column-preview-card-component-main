@@ -1,0 +1,132 @@
+/* *** *** *** Custom Properties *** *** *** */
+:root {
+    --font: 'Lexend Deca', sans-serif;
+    --font-bold: 'Big Shoulders Display', sans-serif;
+    --font-size: 15px;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-bright-orange: hsl(31, 77%, 52%);
+    --color-dark-cyan: hsl(184, 100%, 22%);
+    --color-very-dark-cyan: hsl(179, 100%, 13%);
+    --color-transparent-white: hsla(0, 0%, 100%, 0.75);
+    --color-very-light-gray: hsl(0, 0%, 95%);
+}
+
+/* *** *** *** Reset *** *** *** */
+html {
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+*, *:before, *:after { box-sizing: inherit; }
+
+h1, h2, h3, h4, h5, h6, p { margin: 0; }
+
+a { text-decoration: none; }
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+picture { display: block; }
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+hr {
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+/* *** *** *** Components *** *** *** */
+/* *** Components / Three Column Preview Card *** */
+.three-column-preview-card {
+    display: flex;
+    flex-direction: column;
+    width: min(80%, 1000px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card {
+    --gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding: 4rem 3rem;
+}
+
+.card-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--gap);
+}
+
+.card-title {
+    font-family: var(--font-bold);
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.card-content { line-height: 1.5rem; }
+
+.card-btn {
+    width: fit-content;
+    padding: 0.8rem 2rem;
+    border-radius: 60px;
+    background-color: var(--color-white);
+    border: 5px solid var(--color-white);
+}
+
+.card-btn:hover {
+    background-color: transparent;
+    color: var(--color-white) !important;
+}
+
+/* *** *** *** Site Styles *** *** *** */
+#root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.main { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; 
+    padding: 5rem 0;
+}
+
+.footer { padding: 1rem; }
+
+p { color: var(--color-transparent-white); }
+
+button { background-color: var(--color-very-light-gray); }
+
+@media screen and (min-width: 800px) {
+    .three-column-preview-card { flex-direction: row; }
+
+    .card {
+        gap: calc(3 * var(--gap));
+        justify-content: space-between;
+    }
+}
